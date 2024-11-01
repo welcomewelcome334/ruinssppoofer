@@ -1,1 +1,46 @@
+name: Build Release
 
+permissions:
+    contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        required: true
+        description: "Version of release"
+        
+      body:
+        type: string
+        required: true
+        description: "Release body"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build EXE
+        uses: JackMcKew/pyinstaller-action-windows@main
+        with:
+          path: .
+
+      - name: Create Version File
+        run: echo ${{ github.event.inputs.version }} > VERSION.txt 
+
+      - name: Zip The Files
+        run: zip -jr AnimationReuploader.zip LICENSE.txt VERSION.txt "./dist/windows/Animation Reuploader.exe"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          name: ${{ github.event.inputs.version }}
+          body: ${{ github.event.inputs.body }}
+          files: AnimationReuploader.zip
+        
